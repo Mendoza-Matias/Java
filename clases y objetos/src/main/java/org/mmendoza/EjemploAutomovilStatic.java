@@ -18,5 +18,6 @@ public class EjemploAutomovilStatic {
         /* Por medio el nombre de la clase
          * Se cambia para todos*/
         System.out.println(Automovil.getColorPatente());
+        System.out.println(Color.ROJO.getColor());
     }
 }
