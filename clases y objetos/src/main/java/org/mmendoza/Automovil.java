@@ -11,6 +11,11 @@ public class Automovil {
     private String color;
     private double cilindrada;
     private int capacidadTanque = 40; /* Valor default */
+    private static String colorPatente = "Naranja";
+    /* Le pertenece a la clase , se comparte entre todas las instancias y si es modificado , en todas se vera reflejado */
+
+    public static final Integer VELOCIDAD_MAXIMA_CARRETERA = 120;
+    /* Constante de la clase */
 
     /* Constructor */
     public Automovil() {
@@ -30,7 +35,6 @@ public class Automovil {
     }
 
     /* Metodos */
-
     public String getFabricante() {
         return this.fabricante;
     }
@@ -40,7 +44,6 @@ public class Automovil {
     }
 
     /* Setter */
-
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
     }
@@ -53,9 +56,20 @@ public class Automovil {
         /* Modificador de acceso -> Retorno -> Nombre (Parametros){Cuerpo}*/
 
         return "auto.fabricante " + this.fabricante +
-                "\nauto.cilindrada " + this.cilindrada;
+                "\nauto.cilindrada " + this.cilindrada +
+                "\ncolor patente " + colorPatente;
 
         /* this -> referencia el valor de un atributo de la clase */
+    }
+
+    /* Metodos estaticos */
+    public static String getColorPatente() {
+        return Automovil.colorPatente;
+    }
+
+    /* Solo se pueden utilizar atributos estaticos dentro de un metodo estatico */
+    public static void setColorPatente(String colorPatente) {
+        Automovil.colorPatente = colorPatente;
     }
 
     public String acelerar(int rmp) {
