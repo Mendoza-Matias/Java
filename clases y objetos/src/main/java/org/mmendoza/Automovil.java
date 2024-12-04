@@ -8,14 +8,17 @@ public class Automovil {
     /* Modificador de acceso privado -> visibles dentro de la clase*/
     private String modelo;
 
-    private String color;
+    private Color color; /* Uso el enum como un tipo de dato */
     private double cilindrada;
     private int capacidadTanque = 40; /* Valor default */
     private static String colorPatente = "Naranja";
-    /* Le pertenece a la clase , se comparte entre todas las instancias y si es modificado , en todas se vera reflejado */
+    /* Static -> Le pertenece a la clase , se comparte entre todas las instancias y si es modificado , en todas se vera reflejado */
+
+    /* Constante de la clase */
 
     public static final Integer VELOCIDAD_MAXIMA_CARRETERA = 120;
-    /* Constante de la clase */
+    public static final String COLOR_ROJO = "rojo";
+    public static final String COLOR_AMARILLO = "amarillo";
 
     /* Constructor */
     public Automovil() {
@@ -29,7 +32,7 @@ public class Automovil {
     }
 
     /* Sobrecarga de constructores */
-    public Automovil(String fabricante, String modelo, String color) {
+    public Automovil(String fabricante, String modelo, Color color) {
         this(fabricante, modelo); /* Llamo al otro constructor */
         this.color = color;
     }

@@ -5,11 +5,11 @@ public class EjemploAutomovilStatic {
 
         /* Inicializo la instancia de la clase */
 
-        Automovil auto = new Automovil("Toyoda", "1234");
+        Automovil auto = new Automovil("Toyoda", "1234", Color.AZUL);
 
-        Automovil auto2 = new Automovil("Ford", "3456");
+        Automovil auto2 = new Automovil("Ford", "3456", Color.ROJO);
 
-        Automovil auto3 = new Automovil("Renaut", "7891");
+        Automovil auto3 = new Automovil("Renaut", "7891", Color.AMARILLO);
 
         System.out.println(auto.verDetalle());
         System.out.println(auto2.verDetalle());
