@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mmendoza</groupId>
-    <artifactId>inheritance</artifactId>
+    <artifactId>Abstraction</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
