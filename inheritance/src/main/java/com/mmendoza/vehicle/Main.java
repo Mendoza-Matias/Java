@@ -17,8 +17,8 @@ public class Main {
         System.out.println("Automobile:");
         System.out.println("Mark: " + automobile.getMark());
         System.out.println("Tuition: " + automobile.getTuition());
-        automobile.accelerate();
-        automobile.brake();
+        automobile.accelerate(); // Calling the accelerate method from Automobile
+        automobile.brake();      // Calling the brake method from Automobile
 
         System.out.println("---------------------------");
 
@@ -33,9 +33,9 @@ public class Main {
         System.out.println("Mark: " + car.getMark());
         System.out.println("Tuition: " + car.getTuition());
         System.out.println("Model: " + car.getModel());
-        car.accelerate();
-        car.brake();
-        car.adjustSeat();
+        car.accelerate(); // Calling the accelerate method from Car (inherited from Automobile)
+        car.brake();      // Calling the brake method from Car (inherited from Automobile)
+        car.adjustSeat(); // Calling the adjustSeat method from Car
 
         System.out.println("---------------------------");
 
@@ -43,18 +43,18 @@ public class Main {
         System.out.println("Creating an AllTerrainCar...");
         AllTerrainCar allTerrainCar = new AllTerrainCar();
         allTerrainCar.setMark("Ford");
-        allTerrainCar.use4x4();
-        allTerrainCar.accelerate();
-        allTerrainCar.brake();
-        allTerrainCar.setComfortLevel(5);
-        allTerrainCar.adjustSeat();
+        allTerrainCar.use4x4();  // Calling the use4x4 method from AllTerrainCar
+        allTerrainCar.accelerate(); // Calling the accelerate method from AllTerrainCar (inherited)
+        allTerrainCar.brake();      // Calling the brake method from AllTerrainCar (inherited)
+        allTerrainCar.setComfortLevel(5); // Setting comfort level for AllTerrainCar
+        allTerrainCar.adjustSeat(); // Calling the adjustSeat method from Car (inherited)
 
         System.out.println("AllTerrainCar:");
         System.out.println("Comfort level: " + allTerrainCar.getComfortLevel());
 
         System.out.println("---------------------------");
 
-        // Accessing final variable CODE
+        // Accessing final variable CODE from Automobile class
         System.out.println("Accessing CODE:");
         System.out.println("CODE: " + automobile.getCODE());
 
@@ -65,11 +65,11 @@ public class Main {
         Automobile automobile1 = new Automobile();
         Car car1 = new Car();
 
-        automobile1.getMaximumSpeed(); // Returns 120
-        car1.getMaximumSpeed();        // Returns 120 (from parent class via super)
+        automobile1.getMaximumSpeed(); // Calls the getMaximumSpeed method from Automobile (returns 120)
+        car1.getMaximumSpeed();        // Calls the getMaximumSpeed method from Car (still 120, inherited)
 
-        automobile1.message();         // Returns "Hello Automobile"
-        car1.message();                // Returns "Hello Automobile" (via super in child class)
+        automobile1.message();         // Returns "Hello Automobile" from Automobile
+        car1.message();                // Returns "Hello Automobile" from Car (via super)
 
         System.out.println("-------------------------------------");
 
@@ -86,14 +86,14 @@ public class Main {
         // Example of method overriding
         System.out.println("Method overriding examples:");
         Automobile automobile2 = new Automobile("Audi", "MGM123");
-        automobile2.getDetail();
+        automobile2.getDetail(); // Calls overridden getDetail method from Automobile
 
         Car car3 = new Car("Ford", "DDE324", "2013");
-        car3.getDetail();
+        car3.getDetail(); // Calls overridden getDetail method from Car
 
         System.out.println("-------------------------------------");
 
-        // Polymorphism examples
+        // Polymorphism examples with different objects
         System.out.println("Polymorphism example with different objects:");
         Automobile automobile3 = new Automobile();
         Car car4 = new Car();
@@ -102,12 +102,12 @@ public class Main {
         Automobile x;
 
         x = automobile3;
-        x.hello(); // Returns "Hello Automobile"
+        x.hello(); // Prints "Hello Automobile" (from Automobile)
 
         x = car4;
-        x.hello(); // Returns "Hello Car"
+        x.hello(); // Prints "Hello Car" (from Car)
 
         x = motorbike;
-        x.hello(); // Returns "Hello Motorbike"
+        x.hello(); // Prints "Hello Motorbike" (from Motorbike)
     }
 }
